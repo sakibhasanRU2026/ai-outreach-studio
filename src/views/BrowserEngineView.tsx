@@ -89,7 +89,7 @@ export function BrowserEngineView({
   return (
     <div className="space-y-6">
       {/* Sandbox Notice & Worker Bar */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#11151E] p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="rounded-xl border border-white/[0.07] bg-[#14171F] p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
           <Shield className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" />
           <div className="text-xs space-y-0.5">
@@ -110,8 +110,8 @@ export function BrowserEngineView({
 
       {/* Simulation Dispatcher + Live Mock Browser Viewport */}
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-        <div className="xl:col-span-5 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4 text-xs">
-          <h3 className="text-sm font-semibold text-slate-100 font-display pb-3 border-b border-white/[0.08]">
+        <div className="xl:col-span-5 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4 text-xs">
+          <h3 className="text-sm font-semibold text-slate-100 font-display pb-3 border-b border-white/[0.07]">
             Dispatch Simulated Browser Task
           </h3>
 
@@ -120,7 +120,7 @@ export function BrowserEngineView({
             <select
               value={selectedLeadId}
               onChange={(e) => setSelectedLeadId(e.target.value)}
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             >
               {leads.map((l) => (
                 <option key={l.id} value={l.id}>
@@ -135,7 +135,7 @@ export function BrowserEngineView({
             <select
               value={selectedSessionId}
               onChange={(e) => setSelectedSessionId(e.target.value)}
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             >
               {sessions.map((s) => (
                 <option key={s.id} value={s.id}>
@@ -151,7 +151,7 @@ export function BrowserEngineView({
               <select
                 value={selectedWorkerId}
                 onChange={(e) => setSelectedWorkerId(e.target.value)}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 font-mono"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 font-mono"
               >
                 {WORKERS.map((w) => (
                   <option key={w} value={w}>
@@ -167,7 +167,7 @@ export function BrowserEngineView({
                 onChange={(e) =>
                   setActionType(e.target.value as BrowserExecution['actionType'])
                 }
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               >
                 <option value="Connection Request Simulation">Connection Request</option>
                 <option value="Profile Inspection">Profile Inspection</option>
@@ -180,7 +180,7 @@ export function BrowserEngineView({
             type="button"
             disabled={running}
             onClick={handleRunSimulation}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-4 py-2.5 font-medium text-white transition-colors cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-4 py-2.5 font-medium text-white transition-colors cursor-pointer"
           >
             {running ? (
               <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -192,8 +192,8 @@ export function BrowserEngineView({
         </div>
 
         {/* Mock Browser Viewport + Step Action Logs */}
-        <div className="xl:col-span-7 rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden flex flex-col">
-          <div className="px-4 py-3 border-b border-white/[0.08] bg-[#131823] flex items-center justify-between gap-4">
+        <div className="xl:col-span-7 rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden flex flex-col">
+          <div className="px-4 py-3 border-b border-white/[0.07] bg-[#181B22] flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 min-w-0">
               <Globe className="h-3.5 w-3.5 text-blue-400 shrink-0" />
               <span className="font-mono text-[11px] text-slate-300 truncate">
@@ -205,7 +205,7 @@ export function BrowserEngineView({
 
           <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-5 flex-1 text-xs">
             {/* Mock Profile Card */}
-            <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] p-4 space-y-3">
+            <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] p-4 space-y-3">
               <p className="text-[11px] text-slate-500 font-mono">SANDBOX DOM INSPECTOR</p>
               {previewLead ? (
                 <>
@@ -233,7 +233,7 @@ export function BrowserEngineView({
             </div>
 
             {/* Action Logs */}
-            <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] p-4 space-y-2.5">
+            <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] p-4 space-y-2.5">
               <div className="flex items-center justify-between text-[11px] text-slate-400">
                 <span className="inline-flex items-center gap-1.5 font-mono">
                   <Terminal className="h-3.5 w-3.5 text-slate-400" />
@@ -285,8 +285,8 @@ export function BrowserEngineView({
       </div>
 
       {/* Execution History Table */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
-        <div className="px-6 py-4 border-b border-white/[0.08]">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
+        <div className="px-6 py-4 border-b border-white/[0.07]">
           <h3 className="text-sm font-semibold text-slate-100 font-display">
             Execution History
           </h3>

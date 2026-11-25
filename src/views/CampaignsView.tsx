@@ -218,7 +218,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
               className={`inline-flex items-center gap-2.5 px-3.5 py-2 rounded-md text-xs font-medium border transition-colors cursor-pointer whitespace-nowrap ${
                 draftCampaign?.id === c.id
                   ? 'border-blue-500 bg-blue-500/15 text-slate-100'
-                  : 'border-white/10 bg-[#0F131C] text-slate-400 hover:text-slate-200'
+                  : 'border-white/10 bg-[#111318] text-slate-400 hover:text-slate-200'
               }`}
             >
               <GitBranch className="h-3.5 w-3.5 text-blue-400" />
@@ -233,7 +233,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
         <button
           type="button"
           onClick={() => setNewModalOpen(true)}
-          className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 px-3.5 py-2 text-xs font-medium text-white transition-colors cursor-pointer shrink-0 self-start lg:self-auto"
+          className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-3.5 py-2 text-xs font-medium text-white transition-colors cursor-pointer shrink-0 self-start lg:self-auto"
         >
           <Plus className="h-3.5 w-3.5" />
           New Campaign
@@ -243,8 +243,8 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
       {draftCampaign && (
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
           {/* Left / Center: Visual Workflow Graph */}
-          <div className="xl:col-span-7 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.08]">
+          <div className="xl:col-span-7 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.07]">
               <div>
                 <div className="flex items-center gap-3">
                   <h3 className="text-base font-semibold text-slate-100 font-display">
@@ -280,7 +280,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                   type="button"
                   disabled={saving}
                   onClick={handleSaveCampaign}
-                  className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-3.5 py-1.5 text-xs font-medium text-white cursor-pointer whitespace-nowrap"
+                  className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-3.5 py-1.5 text-xs font-medium text-white cursor-pointer whitespace-nowrap"
                 >
                   <Save className="h-3.5 w-3.5" />
                   Save Workflow
@@ -304,7 +304,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
               <select
                 value={addStepType}
                 onChange={(e) => setAddStepType(e.target.value as WorkflowStepType)}
-                className="flex-1 min-w-[200px] rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-xs text-slate-200"
+                className="flex-1 min-w-[200px] rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-xs text-slate-200"
               >
                 {STEP_TYPES.map((t) => (
                   <option key={t} value={t}>
@@ -333,7 +333,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                       className={`group rounded-lg border p-3.5 transition-colors cursor-pointer ${
                         isSelected
                           ? 'border-blue-500 bg-blue-500/10'
-                          : 'border-white/[0.08] bg-[#0B0E14] hover:border-white/20'
+                          : 'border-white/[0.07] bg-[#0D0F14] hover:border-white/20'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -394,8 +394,8 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
 
           {/* Right: Step Inspector & Campaign Stats */}
           <div className="xl:col-span-5 space-y-6">
-            <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4 text-xs">
-              <h3 className="text-sm font-semibold text-slate-100 font-display pb-3 border-b border-white/[0.08]">
+            <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4 text-xs">
+              <h3 className="text-sm font-semibold text-slate-100 font-display pb-3 border-b border-white/[0.07]">
                 Step Inspector
               </h3>
 
@@ -410,7 +410,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                           type: e.target.value as WorkflowStepType,
                         })
                       }
-                      className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                      className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
                     >
                       {STEP_TYPES.map((t) => (
                         <option key={t} value={t}>
@@ -425,7 +425,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                     <input
                       value={activeStep.title}
                       onChange={(e) => handleUpdateActiveStep({ title: e.target.value })}
-                      className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                      className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
                     />
                   </div>
 
@@ -435,7 +435,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                       rows={3}
                       value={activeStep.description}
                       onChange={(e) => handleUpdateActiveStep({ description: e.target.value })}
-                      className="w-full rounded-md border border-white/10 bg-[#0B0E14] p-3 text-slate-200"
+                      className="w-full rounded-md border border-white/10 bg-[#0D0F14] p-3 text-slate-200"
                     />
                   </div>
 
@@ -452,7 +452,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                             config: { ...activeStep.config, delayHours: Number(e.target.value) },
                           })
                         }
-                        className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 font-mono"
+                        className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 font-mono"
                       />
                     </div>
                   )}
@@ -471,7 +471,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                             },
                           })
                         }
-                        className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                        className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
                       >
                         <option value="Executive Peer">Executive Peer</option>
                         <option value="Consultative">Consultative</option>
@@ -510,7 +510,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                         })
                       }
                       placeholder="e.g. leadScore >= 80 OR connectionAccepted === true"
-                      className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 placeholder:text-slate-500 font-mono text-[11px]"
+                      className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 placeholder:text-slate-500 font-mono text-[11px]"
                     />
                   </div>
                 </div>
@@ -520,7 +520,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
             </div>
 
             {/* Campaign Attribution Stats */}
-            <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4 text-xs">
+            <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4 text-xs">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-slate-100 font-display">
                   Sequence Telemetry
@@ -559,7 +559,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
             </div>
 
             {/* Campaign Execution History */}
-            <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-3 text-xs">
+            <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-3 text-xs">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-slate-100 font-display">
                   Campaign Execution History
@@ -573,7 +573,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
                   No automation runs logged for this campaign yet.
                 </p>
               ) : (
-                <div className="divide-y divide-white/[0.06] border border-white/[0.06] rounded-lg bg-[#0B0E14]">
+                <div className="divide-y divide-white/[0.06] border border-white/[0.06] rounded-lg bg-[#0D0F14]">
                   {campaignRuns.slice(0, 5).map((run) => (
                     <div key={run.id} className="p-3 flex items-center justify-between gap-3">
                       <div className="min-w-0">
@@ -609,7 +609,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
               value={newForm.name}
               onChange={(e) => setNewForm({ ...newForm, name: e.target.value })}
               placeholder="e.g. Series B FinTech CTOs"
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             />
           </div>
           <div>
@@ -618,7 +618,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
               value={newForm.targetPersona}
               onChange={(e) => setNewForm({ ...newForm, targetPersona: e.target.value })}
               placeholder="e.g. CTO / VP Engineering"
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             />
           </div>
           <div>
@@ -627,7 +627,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
               rows={3}
               value={newForm.description}
               onChange={(e) => setNewForm({ ...newForm, description: e.target.value })}
-              className="w-full rounded-md border border-white/10 bg-[#0B0E14] p-3 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#0D0F14] p-3 text-slate-100"
             />
           </div>
           <div className="flex justify-end gap-2 pt-2">
@@ -640,7 +640,7 @@ export function CampaignsView({ campaigns, automationRuns, onRefresh }: Campaign
             </button>
             <button
               type="submit"
-              className="rounded-md bg-blue-600 hover:bg-blue-500 px-4 py-2 font-medium text-white cursor-pointer"
+              className="rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-4 py-2 font-medium text-white cursor-pointer"
             >
               Create Campaign
             </button>

@@ -75,7 +75,7 @@ export function ActivityLogsView({ logs }: ActivityLogsViewProps) {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as 'All' | ActivityLog['status'])}
-            className="rounded-md border border-white/10 bg-[#0F131C] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
+            className="rounded-md border border-white/10 bg-[#111318] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
           >
             {STATUSES.map((s) => (
               <option key={s} value={s}>
@@ -91,17 +91,17 @@ export function ActivityLogsView({ logs }: ActivityLogsViewProps) {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Filter events or entity ID..."
-              className="w-full rounded-md border border-white/10 bg-[#0F131C] pl-9 pr-3 py-2 text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-blue-500"
+              className="w-full rounded-md border border-white/10 bg-[#111318] pl-9 pr-3 py-2 text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-blue-500"
             />
           </div>
         </div>
       </div>
 
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-white/[0.08] text-slate-400">
+              <tr className="border-b border-white/[0.07] text-slate-400">
                 <th className="py-3 px-6 font-medium">Timestamp</th>
                 <th className="py-3 px-4 font-medium">Category</th>
                 <th className="py-3 px-4 font-medium">Event</th>
@@ -148,7 +148,7 @@ export function ActivityLogsView({ logs }: ActivityLogsViewProps) {
       >
         {selectedLog && (
           <div className="space-y-4 text-xs">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pb-3 border-b border-white/[0.08]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pb-3 border-b border-white/[0.07]">
               <div>
                 <span className="text-slate-500 block">Status</span>
                 <StatusText status={selectedLog.status} />

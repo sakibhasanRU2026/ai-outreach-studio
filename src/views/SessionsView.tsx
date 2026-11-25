@@ -70,18 +70,18 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
         <button
           type="button"
           onClick={() => setModalOpen(true)}
-          className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 px-3.5 py-2 text-xs font-medium text-white cursor-pointer shrink-0 self-start sm:self-auto whitespace-nowrap"
+          className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-3.5 py-2 text-xs font-medium text-white cursor-pointer shrink-0 self-start sm:self-auto whitespace-nowrap"
         >
           <Plus className="h-3.5 w-3.5" />
           Add Simulated Session
         </button>
       </div>
 
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-white/[0.08] text-slate-400">
+              <tr className="border-b border-white/[0.07] text-slate-400">
                 <th className="py-3 px-6 font-medium">Session / Worker</th>
                 <th className="py-3 px-4 font-medium">Account Label</th>
                 <th className="py-3 px-4 font-medium">Status</th>
@@ -231,7 +231,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
       >
         {inspectSession && (
           <div className="space-y-4 text-xs">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pb-3 border-b border-white/[0.08]">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pb-3 border-b border-white/[0.07]">
               <div>
                 <span className="text-slate-500 block">Status</span>
                 <StatusText status={inspectSession.status} />
@@ -251,7 +251,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
                 </span>
               </div>
             </div>
-            <div className="rounded-md border border-white/[0.08] bg-[#0B0E14] p-4 font-mono text-[11px] space-y-2 max-h-64 overflow-y-auto text-slate-300">
+            <div className="rounded-md border border-white/[0.07] bg-[#0D0F14] p-4 font-mono text-[11px] space-y-2 max-h-64 overflow-y-auto text-slate-300">
               {(inspectSession.logs && inspectSession.logs.length > 0
                 ? inspectSession.logs
                 : ['No log lines recorded yet for this session.']
@@ -279,7 +279,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
               value={form.accountLabel}
               onChange={(e) => setForm({ ...form, accountLabel: e.target.value })}
               placeholder="e.g. Elena · Enterprise Growth"
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             />
           </div>
           <div>
@@ -290,7 +290,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
               value={form.operatorEmail}
               onChange={(e) => setForm({ ...form, operatorEmail: e.target.value })}
               placeholder="operator@company.io"
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -299,7 +299,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
               <input
                 value={form.proxyRegion}
                 onChange={(e) => setForm({ ...form, proxyRegion: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               />
             </div>
             <div>
@@ -307,7 +307,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
               <select
                 value={form.assignedWorker}
                 onChange={(e) => setForm({ ...form, assignedWorker: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 font-mono"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 font-mono"
               >
                 {WORKERS.map((w) => (
                   <option key={w} value={w}>
@@ -324,7 +324,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
                 max={80}
                 value={form.dailyActionLimit}
                 onChange={(e) => setForm({ ...form, dailyActionLimit: Number(e.target.value) })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 font-mono"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 font-mono"
               />
             </div>
           </div>
@@ -338,7 +338,7 @@ export function SessionsView({ sessions, onRefresh }: SessionsViewProps) {
             </button>
             <button
               type="submit"
-              className="rounded-md bg-blue-600 hover:bg-blue-500 px-4 py-2 font-medium text-white cursor-pointer"
+              className="rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-4 py-2 font-medium text-white cursor-pointer"
             >
               Create Session
             </button>

@@ -82,7 +82,7 @@ export function ExecutionHistoryView({
   return (
     <div className="space-y-6">
       {/* Summary Strip */}
-      <div className="grid grid-cols-2 md:grid-cols-4 border border-white/[0.08] rounded-xl bg-[#0F131C] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] overflow-hidden">
+      <div className="grid grid-cols-2 md:grid-cols-4 border border-white/[0.07] rounded-xl bg-[#111318] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] overflow-hidden">
         <div className="p-5">
           <p className="text-xs text-slate-400">Recorded Automation Runs</p>
           <p className="mt-2 text-2xl font-semibold text-slate-100 font-mono tabular-nums">
@@ -140,7 +140,7 @@ export function ExecutionHistoryView({
             type="button"
             disabled={runningE2E}
             onClick={handleQuickE2E}
-            className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-3.5 py-1.5 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-3.5 py-1.5 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
           >
             <Play className="h-3.5 w-3.5 fill-current" />
             {runningE2E ? 'Running E2E Test...' : 'Run 11-Step E2E Test'}
@@ -149,11 +149,11 @@ export function ExecutionHistoryView({
       </div>
 
       {/* Runs Table */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-white/[0.08] text-slate-400">
+              <tr className="border-b border-white/[0.07] text-slate-400">
                 <th className="py-3 px-6 font-medium">Run ID</th>
                 <th className="py-3 px-4 font-medium">Trigger</th>
                 <th className="py-3 px-4 font-medium">Prospect & Campaign</th>
@@ -224,8 +224,8 @@ export function ExecutionHistoryView({
       {/* Selected Run Inspector: 11-Step Trace + Linked Browser Worker Logs & Jobs */}
       {selectedRun && (
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-          <div className="xl:col-span-7 rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
-            <div className="px-6 py-4 border-b border-white/[0.08] flex flex-wrap items-center justify-between gap-2">
+          <div className="xl:col-span-7 rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
+            <div className="px-6 py-4 border-b border-white/[0.07] flex flex-wrap items-center justify-between gap-2">
               <div>
                 <h3 className="text-sm font-semibold text-slate-100 font-display">
                   11-Step Execution Trace · {selectedRun.id}
@@ -268,7 +268,7 @@ export function ExecutionHistoryView({
 
           <div className="xl:col-span-5 space-y-6">
             {/* Linked Browser Worker Logs */}
-            <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-5 space-y-3">
+            <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-5 space-y-3">
               <div className="flex items-center justify-between">
                 <h4 className="text-xs font-semibold text-slate-100 flex items-center gap-2 font-display">
                   <Globe className="h-3.5 w-3.5 text-blue-400" />
@@ -282,7 +282,7 @@ export function ExecutionHistoryView({
               </div>
 
               {linkedExecution ? (
-                <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] p-3.5 space-y-2 max-h-64 overflow-y-auto">
+                <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] p-3.5 space-y-2 max-h-64 overflow-y-auto">
                   {linkedExecution.logs.map((log, idx) => (
                     <div key={idx} className="text-[11px] flex items-start gap-2 leading-relaxed">
                       <span className="font-mono text-[10px] text-slate-500 shrink-0 tabular-nums pt-0.5">
@@ -305,7 +305,7 @@ export function ExecutionHistoryView({
             </div>
 
             {/* Linked Background Jobs */}
-            <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-5 space-y-3">
+            <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-5 space-y-3">
               <div className="flex items-center justify-between">
                 <h4 className="text-xs font-semibold text-slate-100 flex items-center gap-2 font-display">
                   <Layers className="h-3.5 w-3.5 text-emerald-400" />
@@ -319,7 +319,7 @@ export function ExecutionHistoryView({
                   {linkedJobs.map((job) => (
                     <div
                       key={job.id}
-                      className="rounded-lg border border-white/[0.08] bg-[#0B0E14] p-3 space-y-1.5 text-[11px]"
+                      className="rounded-lg border border-white/[0.07] bg-[#0D0F14] p-3 space-y-1.5 text-[11px]"
                     >
                       <div className="flex items-center justify-between font-mono">
                         <span className="text-slate-200">

@@ -59,7 +59,7 @@ export function AiAgentView({ decisions, leads, onRefresh }: AiAgentViewProps) {
       {/* Context Evaluator Bar */}
       <form
         onSubmit={handleEvaluate}
-        className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4 text-xs"
+        className="rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4 text-xs"
       >
         <div className="flex items-center justify-between">
           <div>
@@ -77,7 +77,7 @@ export function AiAgentView({ decisions, leads, onRefresh }: AiAgentViewProps) {
             <select
               value={selectedLeadId}
               onChange={(e) => setSelectedLeadId(e.target.value)}
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             >
               {leads.map((l) => (
                 <option key={l.id} value={l.id}>
@@ -92,14 +92,14 @@ export function AiAgentView({ decisions, leads, onRefresh }: AiAgentViewProps) {
               value={replySnippet}
               onChange={(e) => setReplySnippet(e.target.value)}
               placeholder="Optional prospect reply text (e.g. 'Interested — let us meet next Tuesday')"
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 placeholder:text-slate-500"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 placeholder:text-slate-500"
             />
           </div>
           <div className="lg:col-span-2">
             <button
               type="submit"
               disabled={evaluating}
-              className="w-full inline-flex items-center justify-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-4 py-2 font-medium text-white cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-4 py-2 font-medium text-white cursor-pointer"
             >
               {evaluating ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -113,7 +113,7 @@ export function AiAgentView({ decisions, leads, onRefresh }: AiAgentViewProps) {
       </form>
 
       {/* Recommendations Queue */}
-      <div className="divide-y divide-white/[0.08] rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
+      <div className="divide-y divide-white/[0.08] rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
         {decisions.map((d) => (
           <div
             key={d.id}

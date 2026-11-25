@@ -219,7 +219,7 @@ export function SystemHealthView({
   return (
     <div className="space-y-6">
       {/* Observability Header Banner */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#11151E] p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="rounded-xl border border-white/[0.07] bg-[#14171F] p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
           <Activity className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" />
           <div className="text-xs space-y-1">
@@ -251,7 +251,7 @@ export function SystemHealthView({
       </div>
 
       {/* 4 Telemetry Metrics */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 border border-white/[0.08] rounded-xl bg-[#0F131C] divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08] overflow-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 border border-white/[0.07] rounded-xl bg-[#111318] divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08] overflow-hidden">
         <div className="p-5 space-y-2">
           <p className="text-xs text-slate-400">Gemini API Connection</p>
           <div className="pt-0.5">
@@ -301,7 +301,7 @@ export function SystemHealthView({
 
       {/* AI Provider Switcher & Retry Config + 11-Step E2E Test Runner */}
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-        <div className="xl:col-span-5 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-5">
+        <div className="xl:col-span-5 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-5">
           <div className="flex items-start justify-between gap-3">
             <div>
               <h3 className="text-sm font-semibold text-slate-100 font-display flex items-center gap-2">
@@ -323,7 +323,7 @@ export function SystemHealthView({
               className={`text-left rounded-lg border p-3.5 transition-colors cursor-pointer ${
                 aiTelemetry.providerPreference === 'gemini'
                   ? 'border-blue-500/60 bg-blue-500/10'
-                  : 'border-white/[0.08] bg-[#0B0E14] hover:border-white/20'
+                  : 'border-white/[0.07] bg-[#0D0F14] hover:border-white/20'
               }`}
             >
               <div className="flex items-center justify-between text-xs font-medium text-slate-100">
@@ -344,7 +344,7 @@ export function SystemHealthView({
               className={`text-left rounded-lg border p-3.5 transition-colors cursor-pointer ${
                 aiTelemetry.providerPreference === 'mock'
                   ? 'border-amber-500/60 bg-amber-500/10'
-                  : 'border-white/[0.08] bg-[#0B0E14] hover:border-white/20'
+                  : 'border-white/[0.07] bg-[#0D0F14] hover:border-white/20'
               }`}
             >
               <div className="flex items-center justify-between text-xs font-medium text-slate-100">
@@ -369,7 +369,7 @@ export function SystemHealthView({
                 max={5}
                 value={maxRetriesInput}
                 onChange={(e) => setMaxRetriesInput(Number(e.target.value))}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-2.5 py-1.5 text-slate-100 font-mono"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-2.5 py-1.5 text-slate-100 font-mono"
               />
             </div>
             <div>
@@ -381,7 +381,7 @@ export function SystemHealthView({
                 step={50}
                 value={retryDelayInput}
                 onChange={(e) => setRetryDelayInput(Number(e.target.value))}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-2.5 py-1.5 text-slate-100 font-mono"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-2.5 py-1.5 text-slate-100 font-mono"
               />
             </div>
             <button
@@ -406,7 +406,7 @@ export function SystemHealthView({
           )}
 
           {probeFeedback && (
-            <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] p-3 text-xs space-y-1">
+            <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] p-3 text-xs space-y-1">
               <div className="flex items-center justify-between font-mono text-[11px] text-slate-400">
                 <span>Latest Probe ({probeFeedback.latencyMs}ms)</span>
                 <span>{formatIsoTimeOnly(probeFeedback.checkedAt)}</span>
@@ -415,7 +415,7 @@ export function SystemHealthView({
             </div>
           )}
 
-          <div className="pt-3 border-t border-white/[0.08] grid grid-cols-2 gap-3 text-xs">
+          <div className="pt-3 border-t border-white/[0.07] grid grid-cols-2 gap-3 text-xs">
             <div>
               <span className="text-slate-500 block">Worker Pool</span>
               <span className="font-mono tabular-nums text-slate-200">
@@ -432,8 +432,8 @@ export function SystemHealthView({
         </div>
 
         {/* One-Click Automated 11-Step E2E Test Suite */}
-        <div className="xl:col-span-7 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/[0.08]">
+        <div className="xl:col-span-7 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/[0.07]">
             <div>
               <h3 className="text-sm font-semibold text-slate-100 font-display flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4 text-emerald-400" />
@@ -470,7 +470,7 @@ export function SystemHealthView({
                 value={selectedTestLeadId}
                 disabled={runningE2E}
                 onChange={(e) => setSelectedTestLeadId(e.target.value)}
-                className="rounded-md border border-white/10 bg-[#151A24] px-2.5 py-1.5 text-slate-100 max-w-xs truncate"
+                className="rounded-md border border-white/10 bg-[#181B22] px-2.5 py-1.5 text-slate-100 max-w-xs truncate"
               >
                 {leads.map((l) => (
                   <option key={l.id} value={l.id}>
@@ -491,7 +491,7 @@ export function SystemHealthView({
           </div>
 
           {latestE2ERun ? (
-            <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] divide-y divide-white/[0.06] max-h-72 overflow-y-auto">
+            <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] divide-y divide-white/[0.06] max-h-72 overflow-y-auto">
               {latestE2ERun.steps.map((s) => (
                 <div
                   key={s.stepNumber}
@@ -541,8 +541,8 @@ export function SystemHealthView({
       </div>
 
       {/* Automated QA Verification Matrix (Per-Module + Run Full System Test) */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-white/[0.08]">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-white/[0.07]">
           <div>
             <h3 className="text-sm font-semibold text-slate-100 font-display flex items-center gap-2">
               <FlaskConical className="h-4 w-4 text-blue-400" />
@@ -565,7 +565,7 @@ export function SystemHealthView({
               type="button"
               disabled={runningModuleId !== null}
               onClick={() => handleRunModuleTests('all')}
-              className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-4 py-2 text-xs font-medium text-white cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-4 py-2 text-xs font-medium text-white cursor-pointer whitespace-nowrap"
             >
               {runningModuleId === 'all' ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -584,7 +584,7 @@ export function SystemHealthView({
               type="button"
               disabled={runningModuleId !== null}
               onClick={() => handleRunModuleTests(suite.id)}
-              className="flex items-center justify-between gap-2 rounded-md border border-white/10 bg-[#0B0E14] hover:border-blue-500/40 hover:bg-white/[0.04] px-3 py-2 text-xs text-slate-200 transition-colors cursor-pointer disabled:opacity-50"
+              className="flex items-center justify-between gap-2 rounded-md border border-white/10 bg-[#0D0F14] hover:border-blue-500/40 hover:bg-white/[0.04] px-3 py-2 text-xs text-slate-200 transition-colors cursor-pointer disabled:opacity-50"
             >
               <span className="truncate">{suite.label}</span>
               {runningModuleId === suite.id ? (
@@ -597,7 +597,7 @@ export function SystemHealthView({
         </div>
 
         {moduleResults.length > 0 && (
-          <div className="divide-y divide-white/[0.06] border border-white/[0.08] rounded-lg bg-[#0B0E14]">
+          <div className="divide-y divide-white/[0.06] border border-white/[0.07] rounded-lg bg-[#0D0F14]">
             {moduleResults.map((res) => (
               <div
                 key={res.id}
@@ -622,8 +622,8 @@ export function SystemHealthView({
       </div>
 
       {/* Complete 8-Service Integration Boundary Matrix */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
-        <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
+        <div className="px-6 py-4 border-b border-white/[0.07] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Server className="h-4 w-4 text-blue-400" />
             <h3 className="text-sm font-semibold text-slate-100 font-display">

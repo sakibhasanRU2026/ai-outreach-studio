@@ -72,35 +72,37 @@ function resolveTone(status: string): Tone {
 
 export function StatusText({ status, showIcon = true }: { status: string; showIcon?: boolean }) {
   const tone = resolveTone(status);
-  const colorMap: Record<Tone, string> = {
-    success: 'text-emerald-400',
-    info: 'text-blue-400',
-    warning: 'text-amber-400',
-    error: 'text-rose-400',
-    neutral: 'text-slate-400',
+  const pillMap: Record<Tone, string> = {
+    success: 'bg-emerald-500/[0.08] text-emerald-400 border-emerald-500/20',
+    info: 'bg-blue-500/[0.08] text-blue-400 border-blue-500/20',
+    warning: 'bg-amber-500/[0.08] text-amber-300 border-amber-500/20',
+    error: 'bg-rose-500/[0.08] text-rose-400 border-rose-500/20',
+    neutral: 'bg-white/[0.04] text-[#9CA3AF] border-white/[0.08]',
   };
 
   const renderIcon = () => {
     if (!showIcon) return null;
     const lower = status.toLowerCase();
     if (lower === 'running' || lower === 'retrying') {
-      return <Loader2 className="h-3.5 w-3.5 animate-spin shrink-0" />;
+      return <Loader2 className="h-3 w-3 animate-spin shrink-0" />;
     }
     if (lower === 'paused') {
-      return <PauseCircle className="h-3.5 w-3.5 shrink-0" />;
+      return <PauseCircle className="h-3 w-3 shrink-0" />;
     }
     if (lower.includes('needs re-auth') || lower.includes('rate limited')) {
-      return <ShieldAlert className="h-3.5 w-3.5 shrink-0" />;
+      return <ShieldAlert className="h-3 w-3 shrink-0" />;
     }
-    if (tone === 'success') return <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />;
-    if (tone === 'warning') return <Clock className="h-3.5 w-3.5 shrink-0" />;
-    if (tone === 'error') return <XCircle className="h-3.5 w-3.5 shrink-0" />;
-    if (tone === 'info') return <AlertTriangle className="h-3.5 w-3.5 shrink-0" />;
+    if (tone === 'success') return <CheckCircle2 className="h-3 w-3 shrink-0" />;
+    if (tone === 'warning') return <Clock className="h-3 w-3 shrink-0" />;
+    if (tone === 'error') return <XCircle className="h-3 w-3 shrink-0" />;
+    if (tone === 'info') return <AlertTriangle className="h-3 w-3 shrink-0" />;
     return null;
   };
 
   return (
-    <span className={`inline-flex items-center gap-1.5 text-xs font-medium whitespace-nowrap ${colorMap[tone]}`}>
+    <span
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md border text-[11px] font-medium whitespace-nowrap ${pillMap[tone]}`}
+    >
       {renderIcon()}
       <span>{status}</span>
     </span>

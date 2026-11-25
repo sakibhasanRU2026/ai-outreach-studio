@@ -165,7 +165,7 @@ export function AnalyticsView({
           <select
             value={selectedCampaignId}
             onChange={(e) => setSelectedCampaignId(e.target.value)}
-            className="rounded-lg border border-white/[0.08] bg-[#0F131C] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
+            className="rounded-lg border border-white/[0.07] bg-[#111318] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
           >
             <option value="All">All Campaigns ({campaigns.length})</option>
             {campaigns.map((c) => (
@@ -174,7 +174,7 @@ export function AnalyticsView({
               </option>
             ))}
           </select>
-          <div className="inline-flex items-center gap-1 p-1 rounded-lg border border-white/[0.08] bg-[#0F131C]">
+          <div className="inline-flex items-center gap-1 p-1 rounded-lg border border-white/[0.07] bg-[#111318]">
             {([7, 30, 90] as const).map((days) => (
               <button
                 key={days}
@@ -194,7 +194,7 @@ export function AnalyticsView({
       </div>
 
       {/* 8 Analytics KPIs */}
-      <div className="grid grid-cols-2 md:grid-cols-4 border border-white/[0.08] rounded-xl bg-[#0F131C] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] overflow-hidden">
+      <div className="grid grid-cols-2 md:grid-cols-4 border border-white/[0.07] rounded-xl bg-[#111318] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] overflow-hidden">
         {cards.slice(0, 4).map((c) => (
           <div key={c.label} className="p-5">
             <p className="text-xs text-slate-400">{c.label}</p>
@@ -204,7 +204,7 @@ export function AnalyticsView({
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 border border-white/[0.08] rounded-xl bg-[#0F131C] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] overflow-hidden">
+      <div className="grid grid-cols-2 md:grid-cols-4 border border-white/[0.07] rounded-xl bg-[#111318] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] overflow-hidden">
         {cards.slice(4, 8).map((c) => (
           <div key={c.label} className="p-5">
             <p className="text-xs text-slate-400">{c.label}</p>
@@ -216,7 +216,7 @@ export function AnalyticsView({
       </div>
 
       {/* Trend Chart */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-6">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-6">
         <div className="mb-4">
           <h3 className="text-sm font-semibold text-slate-100 font-display">
             Outreach Volume & Reply Trend ({rangeDays} Days)
@@ -227,7 +227,7 @@ export function AnalyticsView({
 
       {/* Funnel + Worker Performance */}
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-        <div className="xl:col-span-6 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4">
+        <div className="xl:col-span-6 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4">
           <h3 className="text-sm font-semibold text-slate-100 font-display">
             Pipeline Conversion Funnel
           </h3>
@@ -251,13 +251,13 @@ export function AnalyticsView({
           </div>
         </div>
 
-        <div className="xl:col-span-6 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-4">
+        <div className="xl:col-span-6 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-4">
           <h3 className="text-sm font-semibold text-slate-100 font-display">
             Worker Performance & Average Latency
           </h3>
           <WorkerThroughputBars items={workerStats} />
 
-          <div className="pt-4 border-t border-white/[0.08]">
+          <div className="pt-4 border-t border-white/[0.07]">
             <p className="text-xs font-medium text-slate-300 mb-2">Campaign Attribution Snapshot</p>
             <div className="space-y-2 text-xs">
               {visibleCampaigns.map((c) => (
@@ -274,8 +274,8 @@ export function AnalyticsView({
       </div>
 
       {/* Campaign-Level Performance Reports */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
-        <div className="px-6 py-4 border-b border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
+        <div className="px-6 py-4 border-b border-white/[0.07] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h3 className="text-sm font-semibold text-slate-100 font-display">
               Campaign-Level Performance Reports

@@ -245,14 +245,14 @@ export function LeadsView({
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search name, company, title, email..."
-              className="w-full rounded-md border border-white/10 bg-[#0F131C] pl-9 pr-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-blue-500"
+              className="w-full rounded-md border border-white/10 bg-[#111318] pl-9 pr-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-blue-500"
             />
           </div>
 
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="rounded-md border border-white/10 bg-[#0F131C] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
+            className="rounded-md border border-white/10 bg-[#111318] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
           >
             <option value="All">All Statuses</option>
             {LEAD_STATUSES.map((s) => (
@@ -265,7 +265,7 @@ export function LeadsView({
           <select
             value={industryFilter}
             onChange={(e) => setIndustryFilter(e.target.value)}
-            className="rounded-md border border-white/10 bg-[#0F131C] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
+            className="rounded-md border border-white/10 bg-[#111318] px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
           >
             {industries.map((ind) => (
               <option key={ind} value={ind}>
@@ -287,7 +287,7 @@ export function LeadsView({
           <button
             type="button"
             onClick={openAddModal}
-            className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 px-3.5 py-2 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-3.5 py-2 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
           >
             <Plus className="h-3.5 w-3.5" />
             Add Lead
@@ -307,7 +307,7 @@ export function LeadsView({
               onChange={(e) => {
                 if (e.target.value) handleBulkAction('assignCampaign', e.target.value);
               }}
-              className="rounded border border-white/15 bg-[#0F131C] px-2.5 py-1.5 text-xs text-slate-200"
+              className="rounded border border-white/15 bg-[#111318] px-2.5 py-1.5 text-xs text-slate-200"
             >
               <option value="" disabled>
                 Assign to campaign...
@@ -322,7 +322,7 @@ export function LeadsView({
               type="button"
               disabled={busyAction}
               onClick={() => handleBulkAction('queueResearch')}
-              className="rounded border border-white/15 bg-[#0F131C] hover:bg-white/[0.08] px-3 py-1.5 text-slate-200 cursor-pointer"
+              className="rounded border border-white/15 bg-[#111318] hover:bg-white/[0.08] px-3 py-1.5 text-slate-200 cursor-pointer"
             >
               Queue AI Research
             </button>
@@ -340,7 +340,7 @@ export function LeadsView({
       )}
 
       {/* High-Density Lead Table */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
         {filteredLeads.length === 0 ? (
           <div className="py-16 px-6 text-center space-y-3">
             <p className="text-sm font-medium text-slate-200">No leads match current filters</p>
@@ -350,7 +350,7 @@ export function LeadsView({
             <button
               type="button"
               onClick={openAddModal}
-              className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 px-4 py-2 text-xs font-medium text-white cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-4 py-2 text-xs font-medium text-white cursor-pointer"
             >
               <Plus className="h-3.5 w-3.5" />
               Add First Lead
@@ -360,7 +360,7 @@ export function LeadsView({
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-white/[0.08] text-slate-400 bg-white/[0.01]">
+                <tr className="border-b border-white/[0.07] text-slate-400 bg-white/[0.01]">
                   <th className="py-3 px-4 w-10">
                     <input
                       type="checkbox"
@@ -465,8 +465,8 @@ export function LeadsView({
       {detailLead && (
         <div className="fixed inset-0 z-40 flex justify-end bg-black/60 backdrop-blur-xs">
           <div className="fixed inset-0" onClick={() => setDetailLeadId(null)} />
-          <div className="relative z-10 w-full max-w-xl h-full bg-[#0D1119] border-l border-white/10 flex flex-col overflow-hidden">
-            <div className="px-6 py-4 border-b border-white/[0.08] flex items-start justify-between gap-4">
+          <div className="relative z-10 w-full max-w-xl h-full bg-[#0D0F14] border-l border-white/10 flex flex-col overflow-hidden">
+            <div className="px-6 py-4 border-b border-white/[0.07] flex items-start justify-between gap-4">
               <div>
                 <div className="flex items-center gap-3">
                   <h3 className="text-base font-semibold text-slate-100 font-display">
@@ -489,7 +489,7 @@ export function LeadsView({
 
             <div className="flex-1 overflow-y-auto p-6 space-y-6 text-xs">
               {/* Quick Metadata Row */}
-              <div className="grid grid-cols-3 gap-4 pb-5 border-b border-white/[0.08]">
+              <div className="grid grid-cols-3 gap-4 pb-5 border-b border-white/[0.07]">
                 <div>
                   <span className="text-slate-500 block">Lead Score</span>
                   <span className="text-base font-mono font-semibold text-slate-100 tabular-nums">
@@ -514,7 +514,7 @@ export function LeadsView({
                   type="button"
                   disabled={busyAction}
                   onClick={() => handleQuickResearch(detailLead)}
-                  className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 px-3.5 py-2 font-medium text-white cursor-pointer disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-3.5 py-2 font-medium text-white cursor-pointer disabled:opacity-50"
                 >
                   <Sparkles className="h-3.5 w-3.5" />
                   Refresh AI Research
@@ -582,7 +582,7 @@ export function LeadsView({
               )}
 
               {(detailLead.generatedConnectionMessage || detailLead.generatedFollowUpMessage) && (
-                <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] p-4 space-y-3">
+                <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] p-4 space-y-3">
                   <div className="flex items-center justify-between">
                     <h4 className="font-semibold text-slate-200">Personalized Messages</h4>
                     {detailLead.approvalStatus && (
@@ -610,7 +610,7 @@ export function LeadsView({
                 </div>
               )}
 
-              <div className="rounded-lg border border-white/[0.08] bg-[#121722] p-4 space-y-2">
+              <div className="rounded-lg border border-white/[0.07] bg-[#14171F] p-4 space-y-2">
                 <div className="flex items-center justify-between">
                   <h4 className="font-semibold text-slate-100">AI-Generated Insights</h4>
                   <span className="text-[11px] font-mono text-slate-500">
@@ -629,7 +629,7 @@ export function LeadsView({
                 {detailLead.outreachHistory.length === 0 ? (
                   <p className="text-slate-500">No outreach touches recorded yet.</p>
                 ) : (
-                  <div className="divide-y divide-white/[0.06] border border-white/[0.08] rounded-lg bg-[#0B0E14]">
+                  <div className="divide-y divide-white/[0.06] border border-white/[0.07] rounded-lg bg-[#0D0F14]">
                     {detailLead.outreachHistory.map((h) => (
                       <div key={h.id} className="p-3 space-y-1">
                         <div className="flex items-center justify-between gap-2">
@@ -667,7 +667,7 @@ export function LeadsView({
                 required
                 value={formState.name}
                 onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               />
             </div>
             <div>
@@ -676,7 +676,7 @@ export function LeadsView({
                 required
                 value={formState.jobTitle}
                 onChange={(e) => setFormState({ ...formState, jobTitle: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               />
             </div>
             <div>
@@ -685,7 +685,7 @@ export function LeadsView({
                 required
                 value={formState.company}
                 onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               />
             </div>
             <div>
@@ -693,7 +693,7 @@ export function LeadsView({
               <input
                 value={formState.industry}
                 onChange={(e) => setFormState({ ...formState, industry: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               />
             </div>
             <div>
@@ -701,7 +701,7 @@ export function LeadsView({
               <input
                 value={formState.location}
                 onChange={(e) => setFormState({ ...formState, location: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               />
             </div>
             <div>
@@ -710,7 +710,7 @@ export function LeadsView({
                 type="email"
                 value={formState.email}
                 onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               />
             </div>
             <div>
@@ -721,7 +721,7 @@ export function LeadsView({
                 max={100}
                 value={formState.leadScore}
                 onChange={(e) => setFormState({ ...formState, leadScore: Number(e.target.value) })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 font-mono"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 font-mono"
               />
             </div>
             <div>
@@ -731,7 +731,7 @@ export function LeadsView({
                 onChange={(e) =>
                   setFormState({ ...formState, status: e.target.value as LeadStatus })
                 }
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               >
                 {LEAD_STATUSES.map((s) => (
                   <option key={s} value={s}>
@@ -748,7 +748,7 @@ export function LeadsView({
                 value={formState.profileUrl}
                 onChange={(e) => setFormState({ ...formState, profileUrl: e.target.value })}
                 placeholder="https://sandbox.outreach.local/in/prospect-name"
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100 font-mono"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100 font-mono"
               />
             </div>
             <div>
@@ -756,7 +756,7 @@ export function LeadsView({
               <select
                 value={formState.campaignId}
                 onChange={(e) => setFormState({ ...formState, campaignId: e.target.value })}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
               >
                 <option value="">Unassigned</option>
                 {campaigns.map((c) => (
@@ -767,7 +767,7 @@ export function LeadsView({
               </select>
             </div>
           </div>
-          <div className="flex justify-end gap-2 pt-3 border-t border-white/[0.08]">
+          <div className="flex justify-end gap-2 pt-3 border-t border-white/[0.07]">
             <button
               type="button"
               onClick={() => setFormOpen(false)}
@@ -778,7 +778,7 @@ export function LeadsView({
             <button
               type="submit"
               disabled={busyAction}
-              className="rounded-md bg-blue-600 hover:bg-blue-500 px-4 py-2 font-medium text-white cursor-pointer disabled:opacity-50"
+              className="rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-4 py-2 font-medium text-white cursor-pointer disabled:opacity-50"
             >
               {editingLead ? 'Save Changes' : 'Create Lead'}
             </button>
@@ -817,7 +817,7 @@ export function LeadsView({
             rows={7}
             value={csvText}
             onChange={(e) => setCsvText(e.target.value)}
-            className="w-full rounded-md border border-white/10 bg-[#0B0E14] p-3 font-mono text-[11px] text-slate-200 focus:outline-none focus:border-blue-500"
+            className="w-full rounded-md border border-white/10 bg-[#0D0F14] p-3 font-mono text-[11px] text-slate-200 focus:outline-none focus:border-blue-500"
           />
           <div className="flex justify-end gap-2 pt-2">
             <button
@@ -831,7 +831,7 @@ export function LeadsView({
               type="button"
               disabled={busyAction}
               onClick={handleImportCsv}
-              className="rounded-md bg-blue-600 hover:bg-blue-500 px-4 py-2 font-medium text-white cursor-pointer disabled:opacity-50"
+              className="rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-4 py-2 font-medium text-white cursor-pointer disabled:opacity-50"
             >
               Import Prospects
             </button>

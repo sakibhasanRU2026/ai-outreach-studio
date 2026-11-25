@@ -114,7 +114,7 @@ export function AiResearchView({
 
   if (!selectedLead) {
     return (
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-12 text-center text-sm text-slate-400">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-12 text-center text-sm text-slate-400">
         Add a lead first to run AI research and personalized message generation.
       </div>
     );
@@ -334,7 +334,7 @@ export function AiResearchView({
   return (
     <div className="space-y-6">
       {/* Top Selection Bar */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] p-5 space-y-3">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] p-5 space-y-3">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex-1 min-w-0">
             <label className="block text-xs text-slate-400 mb-1.5">
@@ -343,7 +343,7 @@ export function AiResearchView({
             <select
               value={selectedLead.id}
               onChange={(e) => setSelectedLeadId(e.target.value)}
-              className="w-full md:max-w-md rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500"
+              className="w-full md:max-w-md rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500"
             >
               {leads.map((l) => (
                 <option key={l.id} value={l.id}>
@@ -373,7 +373,7 @@ export function AiResearchView({
               type="button"
               disabled={researchBusy}
               onClick={handleRunResearch}
-              className="inline-flex items-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-4 py-2 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-4 py-2 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
             >
               {researchBusy ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -393,8 +393,8 @@ export function AiResearchView({
 
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
         {/* Left: Prospect Research Dossier */}
-        <div className="xl:col-span-5 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-5 text-xs">
-          <div className="flex items-start justify-between gap-4 pb-4 border-b border-white/[0.08]">
+        <div className="xl:col-span-5 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-5 text-xs">
+          <div className="flex items-start justify-between gap-4 pb-4 border-b border-white/[0.07]">
             <div>
               <h3 className="text-base font-semibold text-slate-100 font-display">
                 {selectedLead.name}
@@ -440,7 +440,7 @@ export function AiResearchView({
                 {selectedLead.painPoints.map((pt, idx) => (
                   <li
                     key={idx}
-                    className="rounded-md border border-white/[0.06] bg-[#131823] px-3 py-2 leading-relaxed"
+                    className="rounded-md border border-white/[0.06] bg-[#181B22] px-3 py-2 leading-relaxed"
                   >
                     {pt}
                   </li>
@@ -471,7 +471,7 @@ export function AiResearchView({
                 {selectedLead.conversationStarters.map((starter, i) => (
                   <li
                     key={i}
-                    className="rounded border border-white/[0.06] bg-[#0B0E14] px-3 py-2 text-slate-300"
+                    className="rounded border border-white/[0.06] bg-[#0D0F14] px-3 py-2 text-slate-300"
                   >
                     “{starter}”
                   </li>
@@ -480,7 +480,7 @@ export function AiResearchView({
             </div>
           )}
 
-          <div className="pt-3 border-t border-white/[0.08] space-y-1.5">
+          <div className="pt-3 border-t border-white/[0.07] space-y-1.5">
             <h4 className="font-semibold text-slate-200">AI Insights & Recommended Next Action</h4>
             <p className="text-slate-300 leading-relaxed">{selectedLead.aiInsights}</p>
             <p className="text-blue-400 font-medium pt-1">{selectedLead.recommendedNextAction}</p>
@@ -488,8 +488,8 @@ export function AiResearchView({
         </div>
 
         {/* Right: AI Personalization Studio */}
-        <div className="xl:col-span-7 rounded-xl border border-white/[0.08] bg-[#0F131C] p-6 space-y-5 text-xs">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.08]">
+        <div className="xl:col-span-7 rounded-xl border border-white/[0.07] bg-[#111318] p-6 space-y-5 text-xs">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.07]">
             <div>
               <div className="flex items-center gap-3">
                 <h3 className="text-sm font-semibold text-slate-100 font-display">
@@ -507,7 +507,7 @@ export function AiResearchView({
               type="button"
               disabled={generateBusy}
               onClick={handleGenerateMessages}
-              className="inline-flex items-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-4 py-2 font-medium text-white cursor-pointer shrink-0 whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-4 py-2 font-medium text-white cursor-pointer shrink-0 whitespace-nowrap"
             >
               {generateBusy ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -613,7 +613,7 @@ export function AiResearchView({
                 type="text"
                 value={campaignObjective}
                 onChange={(e) => setCampaignObjective(e.target.value)}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-xs text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-xs text-slate-100"
               />
             </div>
             <div>
@@ -622,7 +622,7 @@ export function AiResearchView({
                 type="text"
                 value={targetAudience}
                 onChange={(e) => setTargetAudience(e.target.value)}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-xs text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-xs text-slate-100"
               />
             </div>
             <div>
@@ -631,7 +631,7 @@ export function AiResearchView({
                 type="text"
                 value={offer}
                 onChange={(e) => setOffer(e.target.value)}
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-xs text-slate-100"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-xs text-slate-100"
               />
             </div>
             <div>
@@ -641,7 +641,7 @@ export function AiResearchView({
                 value={customFocus}
                 onChange={(e) => setCustomFocus(e.target.value)}
                 placeholder="e.g. Mention Q2 hiring or safe browser pacing"
-                className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-xs text-slate-100 placeholder:text-slate-500"
+                className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-xs text-slate-100 placeholder:text-slate-500"
               />
             </div>
           </div>
@@ -676,13 +676,13 @@ export function AiResearchView({
               value={activeDraftValue}
               onChange={(e) => setActiveDraftValue(e.target.value)}
               placeholder={`Generate or edit your ${messageType.toLowerCase()} copy...`}
-              className="w-full rounded-md border border-white/10 bg-[#0B0E14] p-3 text-sm text-slate-100 leading-relaxed focus:outline-none focus:border-blue-500"
+              className="w-full rounded-md border border-white/10 bg-[#0D0F14] p-3 text-sm text-slate-100 leading-relaxed focus:outline-none focus:border-blue-500"
             />
           </div>
 
           {/* Relevance Explanation */}
           {selectedLead.messageRelevanceReason && (
-            <div className="rounded-lg border border-white/[0.08] bg-[#131823] p-4 space-y-1">
+            <div className="rounded-lg border border-white/[0.07] bg-[#181B22] p-4 space-y-1">
               <span className="font-medium text-blue-300 block">
                 Why This Message Is Relevant
               </span>
@@ -692,7 +692,7 @@ export function AiResearchView({
             </div>
           )}
 
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/[0.08]">
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/[0.07]">
             <div className="flex items-center gap-2">
               <button
                 type="button"

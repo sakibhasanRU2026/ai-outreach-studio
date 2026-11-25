@@ -726,7 +726,7 @@ export function DemoAutomationRunner({
     >
       <div className="space-y-4">
         {/* Top Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.08]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.07]">
           <div className="flex-1 min-w-0">
             <label className="block text-xs font-medium text-slate-400 mb-1.5">
               Target Sample Prospect
@@ -735,7 +735,7 @@ export function DemoAutomationRunner({
               value={selectedLeadId}
               disabled={running}
               onChange={(e) => setSelectedLeadId(e.target.value)}
-              className="w-full sm:max-w-sm rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500 disabled:opacity-60"
+              className="w-full sm:max-w-sm rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500 disabled:opacity-60"
             >
               {leads.map((l) => (
                 <option key={l.id} value={l.id}>
@@ -827,7 +827,7 @@ export function DemoAutomationRunner({
               type="button"
               disabled={running || leads.length === 0}
               onClick={() => runFromStep(1, true)}
-              className="inline-flex items-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 px-4 py-2 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-2 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50 px-4 py-2 text-xs font-medium text-white transition-colors cursor-pointer whitespace-nowrap"
             >
               {running ? (
                 <>
@@ -845,7 +845,7 @@ export function DemoAutomationRunner({
         </div>
 
         {/* Gemini API Monitoring Strip */}
-        <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] px-4 py-2.5">
+        <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] px-4 py-2.5">
           <div className="flex flex-wrap items-center justify-between gap-3 text-[11px]">
             <div className="flex items-center gap-2 text-slate-300 font-medium">
               <Activity className="h-3.5 w-3.5 text-blue-400" />
@@ -926,7 +926,7 @@ export function DemoAutomationRunner({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
           {/* Expandable 11-Step Workflow List */}
-          <div className="lg:col-span-7 border border-white/[0.08] rounded-lg bg-[#0B0E14] overflow-hidden">
+          <div className="lg:col-span-7 border border-white/[0.07] rounded-lg bg-[#0D0F14] overflow-hidden">
             <div className="px-4 py-2 border-b border-white/[0.06] flex items-center justify-between text-[11px]">
               <span className="font-medium text-slate-400">
                 11-Step Workflow Trace ({completedCount}/11)
@@ -1010,7 +1010,7 @@ export function DemoAutomationRunner({
                     </button>
 
                     {isExpanded && (
-                      <div className="px-4 pb-3 pt-1 pl-11 bg-[#080B10] border-t border-white/[0.04] space-y-2 text-[11px]">
+                      <div className="px-4 pb-3 pt-1 pl-11 bg-[#090A0D] border-t border-white/[0.04] space-y-2 text-[11px]">
                         <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-[10px] text-slate-400 tabular-nums">
                           <span>
                             Duration:{' '}
@@ -1027,7 +1027,7 @@ export function DemoAutomationRunner({
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          <div className="rounded border border-white/[0.06] bg-[#0F131C] p-2">
+                          <div className="rounded border border-white/[0.06] bg-[#111318] p-2">
                             <p className="text-[10px] font-medium text-slate-500 mb-1">Input</p>
                             <pre className="font-mono text-[10px] text-slate-300 whitespace-pre-wrap break-all leading-relaxed">
                               {step.input
@@ -1035,7 +1035,7 @@ export function DemoAutomationRunner({
                                 : `Awaiting execution of step ${step.number}`}
                             </pre>
                           </div>
-                          <div className="rounded border border-white/[0.06] bg-[#0F131C] p-2">
+                          <div className="rounded border border-white/[0.06] bg-[#111318] p-2">
                             <p className="text-[10px] font-medium text-slate-500 mb-1">Output</p>
                             <pre className="font-mono text-[10px] text-slate-300 whitespace-pre-wrap break-all leading-relaxed">
                               {step.output
@@ -1053,7 +1053,7 @@ export function DemoAutomationRunner({
                               ? step.status === 'Failed'
                                 ? 'border-rose-500/30 bg-rose-500/10 text-rose-300'
                                 : 'border-amber-500/30 bg-amber-500/10 text-amber-200'
-                              : 'border-white/[0.06] bg-[#0F131C] text-slate-500'
+                              : 'border-white/[0.06] bg-[#111318] text-slate-500'
                           }`}
                         >
                           Error Info: {step.error || 'None'}
@@ -1068,7 +1068,7 @@ export function DemoAutomationRunner({
 
           {/* Right Panel: Sandbox Viewport & Verified Execution Summary */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="rounded-lg border border-white/[0.08] bg-[#0B0E14] p-4 space-y-3">
+            <div className="rounded-lg border border-white/[0.07] bg-[#0D0F14] p-4 space-y-3">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-medium text-slate-200 flex items-center gap-1.5">
                   <Globe className="h-3.5 w-3.5 text-blue-400" />
@@ -1077,7 +1077,7 @@ export function DemoAutomationRunner({
                 <span className="font-mono text-[11px] text-slate-500">1280x800</span>
               </div>
 
-              <div className="rounded border border-white/[0.08] bg-[#121620] px-2.5 py-1.5 font-mono text-[11px] text-slate-400 truncate">
+              <div className="rounded border border-white/[0.07] bg-[#14171F] px-2.5 py-1.5 font-mono text-[11px] text-slate-400 truncate">
                 {previewUrl || 'sandbox://idle — awaiting Step 6'}
               </div>
 
@@ -1090,7 +1090,7 @@ export function DemoAutomationRunner({
                     </p>
                   </div>
                   {activeLead.painPoints && activeLead.painPoints.length > 0 && (
-                    <div className="rounded-md border border-white/[0.06] bg-[#10141E] p-3 space-y-1">
+                    <div className="rounded-md border border-white/[0.06] bg-[#111318] p-3 space-y-1">
                       <p className="text-[11px] font-medium text-slate-400">
                         Research Pain Points ({activeLead.painPoints.length})
                       </p>
@@ -1100,7 +1100,7 @@ export function DemoAutomationRunner({
                     </div>
                   )}
                   {activeLead.generatedConnectionMessage && (
-                    <div className="rounded-md border border-white/[0.06] bg-[#131823] p-3">
+                    <div className="rounded-md border border-white/[0.06] bg-[#181B22] p-3">
                       <p className="text-[11px] font-medium text-slate-400 mb-1">
                         Staged Personalized Outreach
                       </p>
@@ -1162,19 +1162,19 @@ export function DemoAutomationRunner({
 
                 {/* Complete Workflow Execution Summary Metrics */}
                 <div className="grid grid-cols-2 gap-2 pt-1 font-mono text-[11px] tabular-nums">
-                  <div className="rounded border border-white/[0.08] bg-[#0B0E14]/70 px-2.5 py-1.5">
+                  <div className="rounded border border-white/[0.07] bg-[#0D0F14]/70 px-2.5 py-1.5">
                     <span className="text-[10px] text-slate-400 block">Total Duration</span>
                     <span className="text-slate-100">{runSummaryMeta.durationMs}ms</span>
                   </div>
-                  <div className="rounded border border-white/[0.08] bg-[#0B0E14]/70 px-2.5 py-1.5">
+                  <div className="rounded border border-white/[0.07] bg-[#0D0F14]/70 px-2.5 py-1.5">
                     <span className="text-[10px] text-slate-400 block">Successful Steps</span>
                     <span className="text-emerald-400">{runSummaryMeta.successfulSteps}/11</span>
                   </div>
-                  <div className="rounded border border-white/[0.08] bg-[#0B0E14]/70 px-2.5 py-1.5">
+                  <div className="rounded border border-white/[0.07] bg-[#0D0F14]/70 px-2.5 py-1.5">
                     <span className="text-[10px] text-slate-400 block">Mock-Mode Steps</span>
                     <span className="text-amber-300">{runSummaryMeta.mockModeSteps}/11</span>
                   </div>
-                  <div className="rounded border border-white/[0.08] bg-[#0B0E14]/70 px-2.5 py-1.5">
+                  <div className="rounded border border-white/[0.07] bg-[#0D0F14]/70 px-2.5 py-1.5">
                     <span className="text-[10px] text-slate-400 block">Failed Steps</span>
                     <span
                       className={

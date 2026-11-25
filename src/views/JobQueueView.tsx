@@ -87,18 +87,18 @@ export function JobQueueView({ jobs, leads, onRefresh }: JobQueueViewProps) {
         <button
           type="button"
           onClick={() => setQueueModalOpen(true)}
-          className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 px-3.5 py-2 text-xs font-medium text-white cursor-pointer shrink-0 self-start sm:self-auto"
+          className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-3.5 py-2 text-xs font-medium text-white cursor-pointer shrink-0 self-start sm:self-auto"
         >
           <Plus className="h-3.5 w-3.5" />
           Queue Job
         </button>
       </div>
 
-      <div className="rounded-xl border border-white/[0.08] bg-[#0F131C] overflow-hidden">
+      <div className="rounded-xl border border-white/[0.07] bg-[#111318] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-white/[0.08] text-slate-400">
+              <tr className="border-b border-white/[0.07] text-slate-400">
                 <th className="py-3 px-6 font-medium">Job ID</th>
                 <th className="py-3 px-4 font-medium">Lead & Campaign</th>
                 <th className="py-3 px-4 font-medium">Job Type</th>
@@ -210,7 +210,7 @@ export function JobQueueView({ jobs, leads, onRefresh }: JobQueueViewProps) {
             <select
               value={newJobLeadId}
               onChange={(e) => setNewJobLeadId(e.target.value)}
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             >
               {leads.map((l) => (
                 <option key={l.id} value={l.id}>
@@ -224,7 +224,7 @@ export function JobQueueView({ jobs, leads, onRefresh }: JobQueueViewProps) {
             <select
               value={newJobType}
               onChange={(e) => setNewJobType(e.target.value as JobType)}
-              className="w-full rounded-md border border-white/10 bg-[#151A24] px-3 py-2 text-slate-100"
+              className="w-full rounded-md border border-white/10 bg-[#181B22] px-3 py-2 text-slate-100"
             >
               {JOB_TYPES.map((t) => (
                 <option key={t} value={t}>
@@ -243,7 +243,7 @@ export function JobQueueView({ jobs, leads, onRefresh }: JobQueueViewProps) {
             </button>
             <button
               type="submit"
-              className="rounded-md bg-blue-600 hover:bg-blue-500 px-4 py-2 font-medium text-white cursor-pointer"
+              className="rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] px-4 py-2 font-medium text-white cursor-pointer"
             >
               Enqueue Task
             </button>
@@ -264,7 +264,7 @@ export function JobQueueView({ jobs, leads, onRefresh }: JobQueueViewProps) {
       >
         {selectedLogsJob && (
           <div className="space-y-3 text-xs">
-            <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-white/[0.08]">
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-white/[0.07]">
               <div>
                 <span className="text-slate-200 font-medium">
                   {selectedLogsJob.leadName} ({selectedLogsJob.leadCompany})
@@ -281,7 +281,7 @@ export function JobQueueView({ jobs, leads, onRefresh }: JobQueueViewProps) {
               </div>
               <StatusText status={selectedLogsJob.status} />
             </div>
-            <div className="rounded-md border border-white/[0.08] bg-[#0B0E14] p-4 font-mono text-[11px] space-y-2 max-h-72 overflow-y-auto text-slate-300">
+            <div className="rounded-md border border-white/[0.07] bg-[#0D0F14] p-4 font-mono text-[11px] space-y-2 max-h-72 overflow-y-auto text-slate-300">
               {selectedLogsJob.logs.map((line, i) => (
                 <p key={i} className="leading-relaxed">
                   {line}
