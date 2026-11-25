@@ -1,0 +1,6 @@
+{
+  "name": "AI Outreach Studio",
+  "description": "AI-powered B2B lead generation, personalized messaging, visual campaign workflows, and simulated browser outreach automation studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
